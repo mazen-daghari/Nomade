@@ -19,7 +19,7 @@ The package enables Gazebo simulation, RViz visualization, and YOLO-based object
 
 
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](https://github.com/mazen-daghari/Mazen_4dw/blob/77e424a2dfffa17c5dbb93baea33e0d8d2a60c1e/logo.png)
 
 
 ## Features
