@@ -38,6 +38,8 @@ The package enables Gazebo simulation, RViz visualization, and YOLO-based object
 
 * CAN-based assisted steering (real hardware in future phase)
 
+* Robot control via internet 
+
 
 
 
