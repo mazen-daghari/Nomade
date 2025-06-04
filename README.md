@@ -7,7 +7,7 @@ The package enables Gazebo simulation, RViz visualization, and YOLO-based object
 
 
 
-[Watch the Project Demo Video Here](https://github.com/mazen-daghari/nomade_final/blob/48b90c4c54a4e159c14fec5a0d6493f09c220e8c/nomade.mp4)
+[Watch the Project Demo Video Here](https://www.youtube.com/watch?v=ViLcez-aPdI)
 
 
 
