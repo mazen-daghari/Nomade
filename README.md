@@ -1,3 +1,6 @@
+# nomade_final
+
+
 
 ## About Nomade Rover Project
 Nomade Rover is an advanced ROS 2 package designed for ROS 2 Foxy and above. It simulates and controls a tactical 4WD robotic platform equipped with perception modules (2D LiDAR, camera, etc.), autonomous navigation, and AI-powered detection (YOLOv8).
@@ -15,7 +18,7 @@ The package enables Gazebo simulation, RViz visualization, and YOLO-based object
 
 
 
-
+![Logo](https://github.com/mazen-daghari/Mazen_4dw/blob/77e424a2dfffa17c5dbb93baea33e0d8d2a60c1e/logo.png)
 
 
 

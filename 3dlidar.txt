@@ -1,0 +1,65 @@
+!-- Lidar sensor in 10fps -->
+
+<!-- Lidar's URDF -->
+<joint name="laser_joint" type="fixed">
+    <parent link="base_link"/> <!-- Changed parent link to match your robot's base -->
+    <child link="laser_frame"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/> <!-- Adjusted position to mount on the base -->
+</joint>
+
+<link name="laser_frame">
+    <visual>
+        <geometry>
+            <cylinder radius="0.05" length="0.05"/>
+        </geometry>
+        <material name="purple"/>
+    </visual>
+    <collision>
+        <geometry>
+            <cylinder radius="0.05" length="0.05"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+    </inertial>
+</link>
+
+<!-- 3D Lidar Gazebo Sensor Plugin -->
+<gazebo reference="laser_frame">
+    <material>Gazebo/Purple</material>
+    
+    <sensor name="laser" type="gpu_ray">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>360</samples>
+                    <min_angle>-3.14</min_angle>
+                    <max_angle>3.14</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>40</samples>
+                    <min_angle>-0.186</min_angle>
+                    <max_angle>0.186</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.3</min>
+                <max>12</max>
+            </range>
+        </ray>
+        
+        <plugin name="laser_controller_3d" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace>${mp['namespace']}</namespace> <!-- Added namespace for consistency -->
+                <remapping>~/out:=/simple_drone/lidar_cloud</remapping> <!-- Updated topic -->
+            </ros>
+            <output_type>sensor_msgs/PointCloud2</output_type>
+            <frame_name>${mp['namespace']}/laser_frame</frame_name>
+        </plugin>
+    </sensor>
+</gazebo>
